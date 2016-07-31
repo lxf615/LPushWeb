@@ -1,0 +1,4 @@
+D:\Project\MyProject\C#\LPushWeb\LPush.Exchange\bin\Release\LPush.Exchange.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Exchange\bin\Release\LPush.Exchange.pdb
+D:\Project\MyProject\C#\LPushWeb\LPush.Exchange\obj\Release\LPush.Exchange.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Exchange\obj\Release\LPush.Exchange.pdb

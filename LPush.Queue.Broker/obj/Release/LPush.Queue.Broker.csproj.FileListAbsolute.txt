@@ -1,0 +1,7 @@
+D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\bin\Release\LPush.Queue.Broker.exe.config
+D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\bin\Release\LPush.Queue.Broker.exe
+D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\bin\Release\LPush.Queue.Broker.pdb
+D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\bin\Release\AsyncIO.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\bin\Release\ZeroMQ.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\obj\Release\LPush.Queue.Broker.exe
+D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\obj\Release\LPush.Queue.Broker.pdb

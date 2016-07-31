@@ -1,0 +1,13 @@
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\bin\Release\Demo.Test.exe.config
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\bin\Release\Demo.Test.exe
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\bin\Release\Demo.Test.pdb
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\bin\Release\Generic2.0.dll
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\bin\Release\log4net.dll
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\bin\Release\RestSharp.dll
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\bin\Release\Generic2.0.pdb
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\bin\Release\Generic2.0.xml
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\bin\Release\log4net.xml
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\bin\Release\RestSharp.xml
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\obj\Release\Demo.Test.csprojResolveAssemblyReference.cache
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\obj\Release\Demo.Test.exe
+D:\Project\MyProject\C#\LPushWeb\Demo.Test\obj\Release\Demo.Test.pdb

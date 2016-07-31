@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Generic2.0</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "M:Generic.EMail.#ctor(System.String,System.String,System.String,System.String,System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:Generic.EMail.Attachments(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:Generic.EMail.SendAsync(System.Net.Mail.SendCompletedEventHandler)" -->
+        <member name="M:Generic.EMail.Send">
+            <summary>   
+            发送邮件,默认端口25
+            </summary>   
+        </member>
+        <member name="M:Generic.EncryptUtils.AESEncrypt(System.String,System.String,System.String)">
+            <summary>
+            AES加密
+            </summary>
+            <param name="plainStr">明文字符串</param>
+            <param name="key">加密密钥128,192,256bit</param>
+            <param name="iv">加密向量128bit</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:Generic.EncryptUtils.AESDecrypt(System.String,System.String,System.String)">
+            <summary>
+            AES解密
+            </summary>
+            <param name="encryptStr">密文字符串</param>
+            <param name="key">加密密钥128,192,256bit</param>
+            <param name="iv">加密向量128bit</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:Generic.EncryptUtils.Decrypt(System.String,System.String)">
+            <summary>
+            DEC 解密过程
+            </summary>
+            <param name="pToDecrypt"></param>
+            <param name="sKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.EncryptUtils.GetMD5String(System.String,System.Text.Encoding)">
+            <summary>
+            取得字符串的md5加密串
+            </summary>
+            <param name="str">原字符串</param>
+            <param name="encoding">编码集,如GB2312等</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.EncryptUtils.GetMD5String(System.String,System.String)">
+            取得字符串的md5加密串 
+            <summary>
+            取得字符串的md5加密串
+            </summary>
+            <param name="str">原字符串</param>
+            <param name="encodingString">编码集,如GB2312等</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.EncryptUtils.GetMD5String(System.String)">
+            <summary>
+            取得字符串的md5加密串
+            </summary>
+            <param name="str">原字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.EncryptUtils.GetRandomPassword(System.Int32)">
+            <summary>
+            随机密码
+            </summary>
+            <param name="len">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.EnvironmentUtils.CheckPort(System.Int32)">
+            <summary>
+            检测端口是否被占用
+            </summary>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Generic.HttpWebUtils">
+            <summary>
+            有关HTTP请求的辅助类
+            </summary>
+        </member>
+        <member name="M:Generic.HttpWebUtils.Get(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            创建GET方式的HTTP请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.HttpWebUtils.Get(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{System.Int32},System.String,System.Net.CookieCollection)">
+            <summary>
+            创建POST方式的HTTP请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="parameters">随同请求POST的参数名称及参数值字典</param>
+            <param name="timeout">请求的超时时间</param>
+            <param name="userAgent">请求的客户端浏览器信息，可以为空</param>
+            <param name="cookies">随同HTTP请求发送的Cookie信息，如果不需要身份验证可以为空</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.HttpWebUtils.Post(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            创建POST方式的HTTP请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="parameters">随同请求POST的参数名称及参数值字典</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.HttpWebUtils.Post(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{System.Int32},System.String,System.Text.Encoding,System.Net.CookieCollection)">
+            <summary>
+            创建POST方式的HTTP请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="parameters">随同请求POST的参数名称及参数值字典</param>
+            <param name="timeout">请求的超时时间</param>
+            <param name="userAgent">请求的客户端浏览器信息，可以为空</param>
+            <param name="requestEncoding">发送HTTP请求时所用的编码</param>
+            <param name="cookies">随同HTTP请求发送的Cookie信息，如果不需要身份验证可以为空</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.StringExtension.ToDateTime(System.String,System.String)">
+            <summary>
+            将指定格式的字符串转换成日期类型
+            </summary>
+            <param name="sValue"></param>
+            <param name="sFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.StringExtension.ToDateTime(System.String)">
+            <summary>
+            字符串转换成日期,字符串格式必须是yyyy-MM-dd HH:mm:ss
+            如果转换失败返回 DateTime.MinValue
+            </summary>
+            <param name="sValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.StringExtension.ToDate(System.String)">
+            <summary>
+            字符串转换成日期,字符串格式必须是yyyy-MM-dd
+            如果转换失败返回 DateTime.MinValue
+            </summary>
+            <param name="sValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.StringExtension.IsMobile(System.String)">
+            <summary>
+            检测是否是有效的手机号
+            </summary>
+            <param name="sValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.StringExtension.ToMD5(System.String)">
+            <summary>
+            获取MD5串,使用UTF8编码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.StringExtension.ToBase64(System.String)">
+            <summary>
+            Base64编码,UTF8编码
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.StringExtension.FromBase64(System.String)">
+            <summary>
+            Base64解码,UTF8编码
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.StringExtension.FromBase64(System.String,System.Text.Encoding)">
+            <summary>
+            Base64解码
+            </summary>
+            <param name="encoding"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.FileUtils.CreateDirectory(System.String)">
+            <summary>
+            检测目录是否存，如果不存在则创建
+            </summary>
+            <param name="dirPath"></param>
+        </member>
+        <member name="T:Generic.IDCard">
+            <summary>
+              公民身份号码是特征组合码,由十七位数字本体码和一位数字校验码组成.排列顺序从左至右依次为:
+            六位数字地址码,八位数字出生日期码,三位数字顺序码和一位数字校验码。
+            1、地址码：表示编码对象常住户口所在县（市、旗、区）的行政区划代码，按 GB/T 2260 的规定执行。
+            2、出生日期码：表示编码对象出生的年、月、日，按/// GB/T 7408 的规定执行。年、月、日代码之间不用分隔符。
+            例：某人出生日期为 1966年10月26日，其出生日期码为 19661026。
+            3、顺序码：表示在同一地址码所标识的区域范围内，
+            对同年、同月、同日出生的人编定的顺序号，顺序码的奇数分配给男性，偶数千分配给女性。
+            4、校验码：校验码采用ISO 7064：1983，MOD 11-2 校验码系统。
+            （1）十七位数字本体码加权求和公式
+            S = Sum(Ai/// Wi), i =/// 0, ... , 16 ，先对前17位数字的权求和
+            Ai:表示第i位置上的身份证号码数字值
+            Wi:表示第i位置上的加权因子
+            Wi: 7 9 10 5 8 4 2 1 6 3 7 9 10 5 8 4 2 1
+            （2）计算模 Y = mod(S, 11)
+            （3）通过模得到对应的校验码
+            Y: 0 1 2 3 4 5 6 7 8 9 10
+            校验码: 1 0 X 9 8 7 6 5 4 3 2
+            </summary>
+        </member>
+        <member name="M:Generic.IDCard.Verify(System.String)">
+            验证身份证是否符合格式
+            @param idcard
+            @return
+        </member>
+        <member name="M:Generic.IDCard.Verify(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            验证身份证是否符合格式及出生日期是否正确
+            </summary>
+            <param name="idcard"></param>
+            <param name="birthDay"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.IDCard.GetCheckDigit(System.String)">
+            计算18位身份证的校验码
+            @param eighteenCardID    18位身份证
+            @return
+        </member>
+        <member name="M:Generic.IDCard.Update2Eighteen(System.String)">
+            将15位身份证升级成18位身份证号码
+            @param fifteenCardID
+            @return
+        </member>
+        <member name="M:Generic.INIFileUtils.WriteString(System.String,System.String,System.String,System.String)">
+            <summary>
+            写INI文件
+            </summary>
+            <param name="Section"></param>
+            <param name="Ident"></param>
+            <param name="Value"></param>
+        </member>
+        <member name="M:Generic.INIFileUtils.ReadString(System.String,System.String,System.String)">
+            <summary>
+             读取INI文件指定
+            </summary>
+            <param name="filePath"></param>
+            <param name="section"></param>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.INIFileUtils.ReadInteger(System.String,System.String,System.String)">
+            <summary>
+            读整数
+            </summary>
+            <param name="section"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.INIFileUtils.ReadInteger(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            读整数
+            </summary>
+            <param name="section"></param>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.INIFileUtils.ReadString(System.String,System.String,System.String,System.String)">
+            <summary>
+             读取INI文件指定
+            </summary>
+            <param name="filePath"></param>
+            <param name="section"></param>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.Logs.WebLog(System.String)">
+            <summary>
+            记录Web日志
+            </summary>
+            <param name="msg">日志内容</param>
+        </member>
+        <member name="M:Generic.Logs.WebLog(System.Exception)">
+            <summary>
+            记录Web异常
+            </summary>
+            <param name="ex">异常对象</param>
+        </member>
+        <member name="M:Generic.Logs.WebLog(System.Exception,System.String)">
+            <summary>
+            记录Web异常
+            </summary>
+            <param name="ex">异常对象</param>
+            <param name="url">异常请求的Web Url</param>
+        </member>
+        <member name="M:Generic.Logs.Log(System.String)">
+            <summary>
+            记录异常
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Generic.Logs.Log(System.String,System.String)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="msg">日志内容</param>
+            <param name="directory">日志记录路径</param>
+        </member>
+        <member name="M:Generic.ReflectorUtils.GetEnumDescription(System.Enum)">
+            <summary>
+            读取枚举的Description属性
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

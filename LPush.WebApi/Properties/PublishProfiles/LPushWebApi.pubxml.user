@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\LPush.WebApi</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/Settings.txt">
+      <publishTime>01/14/2016 20:54:38</publishTime>
+    </File>
+    <File Include="bin/Autofac.dll">
+      <publishTime>12/10/2015 09:25:57</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/28/2015 13:59:22</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>11/28/2015 13:59:22</publishTime>
+    </File>
+    <File Include="bin/Generic2.0.dll">
+      <publishTime>12/24/2015 14:24:46</publishTime>
+    </File>
+    <File Include="bin/LPush.Core.dll">
+      <publishTime>01/17/2016 09:29:58</publishTime>
+    </File>
+    <File Include="bin/LPush.Data.dll">
+      <publishTime>01/17/2016 09:17:25</publishTime>
+    </File>
+    <File Include="bin/LPush.IService.dll">
+      <publishTime>01/17/2016 09:29:58</publishTime>
+    </File>
+    <File Include="bin/LPush.Model.dll">
+      <publishTime>01/17/2016 09:29:58</publishTime>
+    </File>
+    <File Include="bin/LPush.Service.dll">
+      <publishTime>01/17/2016 09:17:25</publishTime>
+    </File>
+    <File Include="bin/LPush.Web.Framework.dll">
+      <publishTime>01/17/2016 09:29:59</publishTime>
+    </File>
+    <File Include="bin/LPush.WebApi.dll">
+      <publishTime>01/17/2016 09:17:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>11/27/2015 14:29:37</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>11/27/2015 14:29:38</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>12/28/2015 15:03:34</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.Entity.EF6.dll">
+      <publishTime>12/28/2015 15:06:33</publishTime>
+    </File>
+    <File Include="bin/Nancy.Authentication.Token.dll">
+      <publishTime>12/03/2015 13:20:01</publishTime>
+    </File>
+    <File Include="bin/Nancy.Bootstrappers.Autofac.dll">
+      <publishTime>12/10/2015 09:26:01</publishTime>
+    </File>
+    <File Include="bin/Nancy.dll">
+      <publishTime>12/23/2015 08:11:27</publishTime>
+    </File>
+    <File Include="bin/Nancy.Owin.dll">
+      <publishTime>11/27/2015 14:28:21</publishTime>
+    </File>
+    <File Include="bin/Nancy.ViewEngines.Razor.dll">
+      <publishTime>12/23/2015 08:11:48</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/27/2015 14:28:21</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>12/05/2015 14:16:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>11/27/2015 15:58:43</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/13/2016 15:02:59</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/17/2016 09:16:36</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/17/2016 09:17:31</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

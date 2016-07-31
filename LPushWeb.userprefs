@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="LPush.Web\LPush.Web.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="360seURL" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="LPush.Service\Basic\UserService.cs">
+    <Files>
+      <File FileName="LPush.Service\Basic\UserService.cs" Line="4" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>LPush.Web.Client\LPush.Web.Client.csproj</String>
+  </DisabledProjects>
+</Properties>

@@ -1,0 +1,76 @@
+﻿<button class="btn-info" type="button" onclick="getTest()">测试Get</button>
+<button class="btn-info" type="button" onclick="postTest()">测试Post</button>
+<button class="btn-info" type="button" onclick="putTest()">测试Put</button>
+<button class="btn-info" type="button" onclick="deleteTest()">测试Delete</button>
+
+<a href="@Url.Content("~/account/logout")">退出</a>   
+<script>
+    $(function(){
+
+    });
+
+    function getTest() {
+        $.getJSON("Example/1", null, function (result) {
+            if (result != null) {
+                alert(result.content.id);
+            }
+        });
+    }
+
+    function postTest() {
+        var json = {
+            "FirstName": "Xiaofeng",
+            "LastName": "Liu",
+            "CreateBy": "Carl"
+        };
+        $.ajax({
+            type: "POST",
+            url: "/Example",
+            data: json,
+            //contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result, status, jqXHR) {
+                if (result==null) {
+                    alert(result.Id);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $.messager.alert("错误", jqXHR.responseJSON.ExceptionMessage, 'error');
+            }
+        });
+    }
+
+    function putTest() {
+        var json = { value: "Liu" };
+        $.ajax({
+            type: "PUT",
+            url: "api/Example/2015",
+            data: JSON.stringify(json),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result, status, jqXHR) {
+                alert(result.value);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $.messager.alert("错误", jqXHR.responseJSON.ExceptionMessage, 'error');
+            }
+        });
+    }
+
+    function deleteTest() {
+        $.ajax({
+            type: "DELETE",
+            url: "api/Example/Liu",
+            dataType: "json",
+            success: function (result, status, jqXHR) {
+                if (result==null) {
+                    alert(result.value);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $.messager.alert("错误", jqXHR.responseJSON.ExceptionMessage, 'error');
+            }
+        });
+    }
+</script>
+    

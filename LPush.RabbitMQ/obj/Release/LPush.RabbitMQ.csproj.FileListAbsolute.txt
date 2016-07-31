@@ -1,0 +1,9 @@
+D:\Project\MyProject\C#\LPushWeb\LPush.RabbitMQ\bin\Release\LPush.RabbitMQ.exe.config
+D:\Project\MyProject\C#\LPushWeb\LPush.RabbitMQ\bin\Release\LPush.RabbitMQ.exe
+D:\Project\MyProject\C#\LPushWeb\LPush.RabbitMQ\bin\Release\LPush.RabbitMQ.pdb
+D:\Project\MyProject\C#\LPushWeb\LPush.RabbitMQ\bin\Release\Newtonsoft.Json.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.RabbitMQ\bin\Release\RabbitMQ.Client.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.RabbitMQ\bin\Release\Newtonsoft.Json.xml
+D:\Project\MyProject\C#\LPushWeb\LPush.RabbitMQ\bin\Release\RabbitMQ.Client.xml
+D:\Project\MyProject\C#\LPushWeb\LPush.RabbitMQ\obj\Release\LPush.RabbitMQ.exe
+D:\Project\MyProject\C#\LPushWeb\LPush.RabbitMQ\obj\Release\LPush.RabbitMQ.pdb

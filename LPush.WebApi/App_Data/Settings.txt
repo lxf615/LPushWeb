@@ -1,0 +1,2 @@
+DataProvider: mysql
+DataConnectionString: server=192.168.47.128;port=3306;user=root;password=Liu_1983;database=LPush;Connection Timeout=120;Charset=utf8;Allow Zero Datetime=true

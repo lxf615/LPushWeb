@@ -1,0 +1,10 @@
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Debug\LPush.Core.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Debug\LPush.Core.pdb
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Debug\Newtonsoft.Json.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Debug\StackExchange.Redis.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Debug\Newtonsoft.Json.xml
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Debug\StackExchange.Redis.pdb
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Debug\StackExchange.Redis.xml
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\obj\Debug\LPush.Core.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\obj\Debug\LPush.Core.pdb
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\obj\Debug\LPush.Core.csprojResolveAssemblyReference.cache

@@ -1,0 +1,9 @@
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Release\LPush.Core.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Release\LPush.Core.pdb
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\obj\Release\LPush.Core.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\obj\Release\LPush.Core.pdb
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Release\Newtonsoft.Json.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Release\StackExchange.Redis.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Release\Newtonsoft.Json.xml
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Release\StackExchange.Redis.pdb
+D:\Project\MyProject\C#\LPushWeb\LPush.Core\bin\Release\StackExchange.Redis.xml
