@@ -3,38 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <title>@ViewBag.Title - 会员管理系统</title>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery-easyui/themes/metro-red/easyui.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery-easyui/themes/icon.css">
+    
 </head>
-<body>
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
+<body >
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'center'" style="text-align:center;">
+            @RenderBody()
         </div>
-    </div>*@
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
+        <div data-options="region:'south',split:false" style="height:40px;text-align:center;">
             <p>&copy; @DateTime.Now.Year - 凌锋</p>
-        </footer>
+        </div>
     </div>
-
+    
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-easyui/jquery.easyui.min.js"></script>
 </body>
 </html>

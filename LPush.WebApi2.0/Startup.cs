@@ -7,6 +7,8 @@ using Microsoft.Owin;
 using Owin;
 
 using LPush.Web.Framework.Middleware;
+
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 [assembly: OwinStartup(typeof(LPush.WebApi.Startup))]
 namespace LPush.WebApi
 {
@@ -14,6 +16,8 @@ namespace LPush.WebApi
     {
         public void Configuration(IAppBuilder app)
         {
+            log4net.Config.BasicConfigurator.Configure();
+
             //authorize
             AuthorizeOptions options = new AuthorizeOptions()
             {

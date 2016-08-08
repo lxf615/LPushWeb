@@ -13,5 +13,11 @@ namespace LPush.Web.Admin.Controllers
         {
             return View();
         }
+
+        // GET: Account
+        public ActionResult Login()
+        {
+            return View();
+        }
     }
 }

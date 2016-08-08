@@ -29,22 +29,22 @@ namespace LPush.Web.Framework.Filter
 
         public override void OnException(HttpActionExecutedContext filterContext)
         {
-
-            string error = string.Empty;
-            if (filterContext.Exception!= null)
+            Exception ex = null;
+            if (filterContext.Exception != null)
             {
                 logger.Error(filterContext.Exception);
-                error = filterContext.Exception.Message;
+                ex = filterContext.Exception;
             }
 
             if (filterContext.Exception.InnerException != null)
             {
                 logger.Error(filterContext.Exception.InnerException);
-                error = filterContext.Exception.InnerException.Message;
+                ex = filterContext.Exception.InnerException;
             }
 
-            if (SendError(filterContext, error))
+            if (options.IsAuthorize)
             {
+                SendError(filterContext, ex.Message);
                 return;
             }
 

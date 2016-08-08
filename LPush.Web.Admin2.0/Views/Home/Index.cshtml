@@ -1,8 +1,24 @@
-﻿
-
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "主页";
 }
 
-<h2>Index</h2>
+<div class="easyui-layout" data-options="fit:true">
+    
+    <div data-options="region:'east'" style="text-align:center;height:100px">
+        234
+    </div>
+    <div data-options="region:'west'" style="width:200px">
+        <div class="easyui-accordion" data-options="multiple:true">
+            <div title="基本信息" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
+                
+            </div>
+            <div title="权限管理" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
+                
+            </div>
+        </div>
+    </div>
+    <div data-options="region:'center'" style="text-align:center;">
+        123
+    </div>
 
+</div>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,30 +8,9 @@ using System.IO;
 using log4net;
 using Microsoft.Owin;
 using Generic;
+
 namespace LPush.Web.Framework.Middleware
 {
-    public class AuthorizeResult
-    {
-       /// <summary>
-       /// 是否有效
-       /// </summary>
-        public bool IsValid { get; set; }
-        /// <summary>
-        /// 消息
-        /// </summary>
-        public string Msg { get; set; }
-
-        /// <summary>
-        /// 加密密钥
-        /// </summary>
-        public string AesKey { get; set; }
-
-        /// <summary>
-        /// 位移量
-        /// </summary>
-        public string AesIV { get; set; }
-    }
-
     public class AuthorizeMiddleware : OwinMiddleware
     {
         private readonly ILog logger = LogManager.GetLogger(typeof(AuthorizeMiddleware));
@@ -46,10 +26,9 @@ namespace LPush.Web.Framework.Middleware
             AuthorizeResult result = await ProcessRequest(context);
             if (result.IsValid)
             {
-                if (!string.IsNullOrEmpty(result.Msg))
+                if (!string.IsNullOrEmpty(result.Msg) && options.IsAuthorize)
                 {
-
-                    using (Stream stream = new MemoryStream() )
+                    using (Stream stream = new MemoryStream())
                     {
                         using (StreamWriter streamWriter = new StreamWriter(stream, Encoding.UTF8))
                         {
@@ -62,75 +41,18 @@ namespace LPush.Web.Framework.Middleware
 
                             //process reponse.
                             await Next.Invoke(context);
-                            //await ProcessResponse(context,result.AesKey,result.AesIV);
                         }
                     }
                 }
                 else
                 {
+                    context.Request.Body.Position = 0;
                     await Next.Invoke(context);
                 }
-                
+
             }
         }
 
-
-
-        /// <summary>
-        /// 授权返回
-        /// </summary>
-        /// <returns></returns>
-        public async Task ProcessResponse(IOwinContext context,string aesKey,string aesIV)
-        {
-            using (var buffer = new MemoryStream())
-            {
-                // Buffer the response
-                var stream = context.Response.Body;
-                context.Response.Body = buffer;
-
-                await Next.Invoke(context);
-
-                try
-                {
-
-
-                    buffer.Seek(0, SeekOrigin.Begin);
-                    using (StreamReader stremReader = new StreamReader(buffer, Encoding.UTF8))
-                    {
-                        string msg = await stremReader.ReadToEndAsync();
-                        int len = msg.Length;
-
-                        msg = "{\"Content\":{\"UserName\":null,\"Password\":null,\"FirstName\":null,\"LastName\":null,\"Email\":null,\"EnterpriseID\":-1,\"UserType\":\"U\",\"CreateDate\":\"2016 - 07 - 15T16: 18:14.5624385 + 08:00\",\"CreateBy\":null,\"ModifyDate\":null,\"ModifyBy\":null,\"IsDeleted\":false,\"Id\":124}}";
-                        //msg = EncryptUtils.AESEncrypt(msg, aesKey, aesIV);
-                        msg = msg.PadRight(len);
-
-                        byte[] bytes = msg.ToBytes();
-                        buffer.Seek(0, SeekOrigin.Begin);
-                        using (var memStream = new MemoryStream(bytes))
-                        {
-                            await memStream.CopyToAsync(buffer);
-                            buffer.Seek(0, SeekOrigin.Begin);
-                            await buffer.CopyToAsync(stream);
-                        }
-
-                        //msg = "{\"Content\":{\"UserName\":null,\"Password\":null,\"FirstName\":null,\"LastName\":null,\"Email\":null,\"EnterpriseID\":-1,\"UserType\":\"U\",\"CreateDate\":\"2016 - 07 - 15T16: 18:14.5624385 + 08:00\",\"CreateBy\":null,\"ModifyDate\":null,\"ModifyBy\":null,\"IsDeleted\":false,\"Id\":124}}";
-                        //byte[] bytes = msg.ToBytes();
-                        //var memStream = new MemoryStream(bytes);
-                        //memStream.Position = 0;
-                        //memStream.CopyTo(stream);
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                    throw;
-                }
-
-
-            }
-
-          
-        }
 
         /// <summary>
         /// 授权处理
@@ -153,10 +75,26 @@ namespace LPush.Web.Framework.Middleware
                 return result;
             }
 
-            result = await ValidateSign(context);
-            if (!result.IsValid)
+            if (options.IsAuthorize)
             {
-                throw new UnauthorizedAccessException("授权失败!");
+                result = await ValidateSign(context);
+                if (!result.IsValid)
+                {
+                    throw new UnauthorizedAccessException("授权失败!");
+                }
+            }
+            else
+            {
+                //不做token校验
+                string msg = await ReadMsg(context);
+                result = new AuthorizeResult()
+                {
+                    IsValid = true,
+                    Msg = msg
+                };
+
+                //记录日志
+                LogMsg(context, msg);
             }
 
             return result;
@@ -209,21 +147,35 @@ namespace LPush.Web.Framework.Middleware
                     IsValid = false
                 };
             }
-            
+
 
             //读取密文
-            string scretMsg = string.Empty;
-            context.Request.Body.Position = 0;
-            using (StreamReader stremReader = new StreamReader(context.Request.Body, Encoding.UTF8))
-            {
-                scretMsg = await stremReader.ReadToEndAsync();
-                scretMsg= scretMsg.Trim(@"""".ToCharArray());
-            }
+            string scretMsg = await ReadMsg(context);
 
             //校验token
             return await ValidateToken(context, token, signArray[1], scretMsg, aesKey, aesIV);
         }
 
+        /// <summary>
+        /// 读取消息
+        /// </summary>
+        /// <returns></returns>
+        public async Task<string> ReadMsg(IOwinContext context)
+        {
+            string scretMsg = string.Empty;
+            context.Request.Body.Position = 0;
+            //using (StreamReader stremReader = new StreamReader(context.Request.Body, Encoding.UTF8))
+            //{
+            //    scretMsg = await stremReader.ReadToEndAsync();
+            //    scretMsg = scretMsg.Trim(@"""".ToCharArray());
+            //}
+
+            StreamReader stremReader = new StreamReader(context.Request.Body, Encoding.UTF8);
+            scretMsg = await stremReader.ReadToEndAsync();
+            scretMsg = scretMsg.Trim(@"""".ToCharArray());
+
+            return scretMsg;
+        }
 
         /// <summary>
         /// 验证token
@@ -233,7 +185,7 @@ namespace LPush.Web.Framework.Middleware
         /// <param name="scretMsg"></param>
         /// <param name="aesKey"></param>
         /// <returns></returns>
-        public async Task<AuthorizeResult> ValidateToken(IOwinContext context, string token, 
+        public async Task<AuthorizeResult> ValidateToken(IOwinContext context, string token,
             string timestamp, string scretMsg, string aesKey, string aesIV)
         {
             //解密
@@ -247,7 +199,7 @@ namespace LPush.Web.Framework.Middleware
             }
 
             //校验
-            if (!(string.Format("{0}|{1}", timestamp ,msg)).ToMD5().Equals(token))
+            if (!(string.Format("{0}|{1}", timestamp, msg)).ToMD5().Equals(token))
             {
                 return new AuthorizeResult()
                 {
@@ -256,7 +208,7 @@ namespace LPush.Web.Framework.Middleware
             }
 
             //记录日志
-            logger.Info(msg);
+            LogMsg(context, msg);
 
             return new AuthorizeResult()
             {
@@ -267,9 +219,50 @@ namespace LPush.Web.Framework.Middleware
             };
         }
 
+        /// <summary>
+        ///记录消息日志 
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        private void LogMsg(IOwinContext context, string msg)
+        {
+            string contentType = string.Empty;
+            IList<string> headers = context.Request.Headers.GetValues("Content-Type");
+            if (headers != null)
+            {
+                contentType = headers.FirstOrDefault();
+            }
+
+            //记录日志
+            logger.Info((string.Format("{0}--{1}--{2}", context.Request.Uri.ToString(),
+                contentType, msg)));
+        }
+
         private async Task Response(IOwinResponse response, string msg)
         {
             await response.WriteAsync(msg);
         }
+    }
+
+    public class AuthorizeResult
+    {
+        /// <summary>
+        /// 是否有效
+        /// </summary>
+        public bool IsValid { get; set; }
+        /// <summary>
+        /// 消息明文
+        /// </summary>
+        public string Msg { get; set; }
+
+        /// <summary>
+        /// 加密密钥
+        /// </summary>
+        public string AesKey { get; set; }
+
+        /// <summary>
+        /// 位移量
+        /// </summary>
+        public string AesIV { get; set; }
     }
 }

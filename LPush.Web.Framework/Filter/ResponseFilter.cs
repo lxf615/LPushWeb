@@ -16,6 +16,8 @@ namespace LPush.Web.Framework.Filter
 {
     public class ResponseFilter: ActionFilterAttribute
     {
+        private static readonly ILog logger = LogManager.GetLogger(typeof(ExceptionFilter));
+
         private AuthorizeOptions options;
         public ResponseFilter(AuthorizeOptions options):base()
         {
@@ -32,7 +34,19 @@ namespace LPush.Web.Framework.Filter
 
             if (context.Exception == null)
             {
-                ProcessResponse(context);
+                if (options.IsAuthorize)
+                {
+                    ProcessResponse(context);
+                }
+                else
+                {
+                    var response = context.Response;
+                    string msg = response.Content.ReadAsStringAsync().Result;
+                    if (!string.IsNullOrEmpty(msg))
+                    {
+                        logger.Info(msg);
+                    }
+                }
             }
 
             base.OnActionExecuted(context);
@@ -64,6 +78,9 @@ namespace LPush.Web.Framework.Filter
 
             var response = context.Response;
             string msg = response.Content.ReadAsStringAsync().Result;
+            logger.Info(msg);
+
+
             DateTime now = DateTime.Now;
             //签名，token
             response.Headers.Add("Sign", (signArray[0] + "|" + now.ToString()).ToBase64());
