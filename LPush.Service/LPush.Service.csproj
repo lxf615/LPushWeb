@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Basic\ILoginService.cs" />
     <Compile Include="Basic\IUserService.cs" />
+    <Compile Include="Basic\LoginService.cs" />
     <Compile Include="Basic\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sample\ExampleService.cs" />
-    <Compile Include="Sample\IExampleService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Generic2.0\Generic2.0.csproj">
@@ -56,12 +56,12 @@
       <Project>{B3FC511E-7D53-4543-B556-FB11D8DBA69F}</Project>
       <Name>LPush.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LPush.Data\LPush.Data.csproj">
-      <Project>{A4B9AA59-B0AB-4EBD-BF07-B07875C35CC2}</Project>
-      <Name>LPush.Data</Name>
+    <ProjectReference Include="..\LPush.Data.Repository\LPush.Data.Repository.csproj">
+      <Project>{b98fefc8-6389-4533-9954-de2bb76ffd10}</Project>
+      <Name>LPush.Data.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\LPush.Model\LPush.Model.csproj">
-      <Project>{C0D730B4-3816-4629-9C58-7350DE03758F}</Project>
+      <Project>{c0d730b4-3816-4629-9c58-7350de03758f}</Project>
       <Name>LPush.Model</Name>
     </ProjectReference>
   </ItemGroup>

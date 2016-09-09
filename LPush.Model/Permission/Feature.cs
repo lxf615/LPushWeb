@@ -1,12 +1,12 @@
 ﻿using System;
 using LPush.Core.Data;
 
-namespace LPush.Model.Permission
+namespace LPush.Model
 {
     /// <summary>
     /// 功能表
     /// </summary>
-    public class Feature:BaseEntity
+    public partial class Feature
     {
         /// <summary>
         /// 功能名称

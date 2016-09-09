@@ -1,4 +1,0 @@
-D:\Project\MyProject\C#\LPushWeb\LPush.Data.Dapper\bin\Release\LPush.Data.Dapper.dll
-D:\Project\MyProject\C#\LPushWeb\LPush.Data.Dapper\bin\Release\LPush.Data.Dapper.pdb
-D:\Project\MyProject\C#\LPushWeb\LPush.Data.Dapper\obj\Release\LPush.Data.Dapper.dll
-D:\Project\MyProject\C#\LPushWeb\LPush.Data.Dapper\obj\Release\LPush.Data.Dapper.pdb

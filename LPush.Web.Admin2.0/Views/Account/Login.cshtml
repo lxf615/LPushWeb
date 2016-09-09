@@ -1,25 +1,56 @@
-﻿@{
+﻿@using LPush.Web.Admin.Models
+@using LPush.Web.Framework.UI
+@model LoginViewModel
+@{
     ViewBag.Title = "登录";
 }
 <div style="padding-left:35%;padding-top:10%;padding-bottom:10%;">
-    <div class="easyui-panel" title="系统登录" style="width:100%;max-width:400px;min-width:400px;padding:30px 60px;">
-        <div style="margin-bottom:10px">
-            <input class="easyui-textbox" style="width:100%;height:40px;padding:12px" data-options="prompt:'用户名',iconCls:'icon-man',iconWidth:38">
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,new { @id="loginForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="easyui-panel" title="系统登录" style="width:100%;max-width:400px;min-width:400px;padding:30px 60px;">
+            <div style="margin-bottom:10px">
+                <input id="LoginName" name="LoginName"  class="easyui-textbox" 
+                       style="width:100%;height:40px;padding:12px" 
+                       data-options="prompt:'用户名',iconCls:'icon-man',iconWidth:38"
+                       value="@(Model==null?string.Empty:Model.LoginName)">
+                @*@Html.ValidateBox("LoginName", "width:100%;height:40px;padding:12px",
+                    "prompt:'用户名',iconCls:'icon-man',iconWidth:38")*@
+                @Html.ValidationMessageFor(m => m.LoginName, "", new { @style = "color:red" })
+            </div>
+            <div style="margin-bottom:20px">
+                @Html.PasswordBox("Password", "width:100%;height:40px;padding:12px")
+                @Html.ValidationMessageFor(m => m.Password, "", new { @style = "color:red" })
+            </div>
+            <div style="margin-bottom:20px">
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe)
+            </div>
+            <div>
+                @*<a href="#" onclick="submitForm()" class="easyui-linkbutton" 
+                   data-options="iconCls:'icon-ok'" style="padding:5px 0px;width:100%;">
+                    <span  style="font-size:14px;">登录</span>
+                </a>*@
+                <input type="submit" value="登录" class="easyui-linkbutton" 
+                   data-options="iconCls:'icon-ok'" style="padding:5px 0px;width:100%;font-size:14px;"/>
+            </div> 
+            <div>
+                @Html.ValidationSummary(true, "", new { @style = "color:red" })
+            </div>
         </div>
-        <div style="margin-bottom:20px">
-            <input class="easyui-textbox" type="password" style="width:100%;height:40px;padding:12px" data-options="prompt:'密码',iconCls:'icon-lock',iconWidth:38">
-        </div>
-        <div style="margin-bottom:20px">
-            <input type="checkbox" checked="checked">
-            <span>记住帐号</span>
-        </div>
-        <div>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" style="padding:5px 0px;width:100%;">
-                <span style="font-size:14px;">登录</span>
-            </a>
-        </div>
-    </div>
+    }
+    
 </div>
-
-
-
+@*<script>
+    function submitForm() {
+        $('#loginForm').form('submit', {
+            url: '/Account/Login',
+            onSubmit: function () {
+                //return $(this).form('validate');
+            },
+            success: function (data) {
+                //$.messager.alert('Access', data, 'info');
+            }
+        });
+    }
+</script>*@

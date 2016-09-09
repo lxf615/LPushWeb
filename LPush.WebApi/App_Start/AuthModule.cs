@@ -8,7 +8,7 @@ using Nancy.Authentication.Token;
 using LPush.WebApi.Infrastructure;
 using LPush.Web.Framework;
 using LPush.Core.Data;
-using LPush.Model.Basic;
+using LPush.Model;
 using LPush.Service.Basic;
 using LPush.Web.Framework.Models;
 

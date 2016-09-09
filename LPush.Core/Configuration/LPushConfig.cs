@@ -6,7 +6,7 @@ using LPush.Core.Data;
 namespace LPush.Core.Configuration
 {
     /// <summary>
-    /// Represents a NopConfig
+    /// Represents a LPushConfig
     /// </summary>
     public partial class LPushConfig : IConfigurationSectionHandler
     {
@@ -21,11 +21,16 @@ namespace LPush.Core.Configuration
         {
             var config = new LPushConfig();
 
+            //redis
             var redisCachingNode = section.SelectSingleNode("RedisCaching");
             config.RedisCachingEnabled = GetBool(redisCachingNode, "Enabled");
-            config.RedisCachingConnectionString = GetString(redisCachingNode, "ConnectionString");
+            if (config.RedisCachingEnabled)
+            {
+                config.RedisCachingConnectionString = GetString(redisCachingNode, "ConnectionString");
+            }
 
-            DataSettings settings = new DataSettings();
+            //Database
+            DataSettings settings = config.DataSettings = new DataSettings();
             settings.DataConnectionString = new System.Collections.Generic.List<string>();
             var dataProviderNode = section.SelectSingleNode("DataProvider");
             settings.DataProvider = GetString(dataProviderNode, "Type");

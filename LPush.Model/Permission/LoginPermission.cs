@@ -1,12 +1,12 @@
 ﻿using System;
 using LPush.Core.Data;
 
-namespace LPush.Model.Permission
+namespace LPush.Model
 {
     /// <summary>
     /// 登录权限
     /// </summary>
-    public class LoginPermission : BaseEntity
+    public partial class LoginPermission 
     {
 		/// <summary>
         /// 登录表关联编号

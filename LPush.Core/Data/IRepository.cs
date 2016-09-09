@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace LPush.Core.Data
 {
-
-
-    /// <summary>
-    /// Master, Write Repository
-    /// </summary>
-    public partial interface IRepository<T> where T : BaseEntity
+    
+    public partial interface IRepository<T> 
 	{
 		/// <summary>
 		/// Get entity by identifier
@@ -55,22 +51,5 @@ namespace LPush.Core.Data
 		/// </summary>
 		/// <param name="entities">Entities</param>
 		void Delete(IEnumerable<T> entities);
-
-        /// <summary>
-		/// Gets a table
-		/// </summary>
-		IQueryable<T> MasterTable { get; }
-
-        /// <summary>
-        /// Gets a table
-        /// </summary>
-        IQueryable<T> SlaveTable { get; }
-
-
-
-		///// <summary>
-		///// Gets a table with "no tracking" enabled (EF feature) Use it only when you load record(s) only for read-only operations
-		///// </summary>
-		//IQueryable<T> TableNoTracking { get; }
-	}
+    }
 }

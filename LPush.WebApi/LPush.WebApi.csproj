@@ -121,7 +121,6 @@
     <Compile Include="App_Start\AuthModule.cs" />
     <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\SiteRootPath.cs" />
-    <Compile Include="Controller\ExampleController.cs" />
     <Compile Include="Infrastructure\NancyModuleExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

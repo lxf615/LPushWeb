@@ -1,4 +1,5 @@
 D:\Project\MyProject\C#\LPushWeb\LPush.Exchange\bin\Debug\LPush.Exchange.dll
 D:\Project\MyProject\C#\LPushWeb\LPush.Exchange\bin\Debug\LPush.Exchange.pdb
+D:\Project\MyProject\C#\LPushWeb\LPush.Exchange\obj\Debug\LPush.Exchange.csprojResolveAssemblyReference.cache
 D:\Project\MyProject\C#\LPushWeb\LPush.Exchange\obj\Debug\LPush.Exchange.dll
 D:\Project\MyProject\C#\LPushWeb\LPush.Exchange\obj\Debug\LPush.Exchange.pdb

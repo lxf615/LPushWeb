@@ -3,5 +3,6 @@ D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\bin\Debug\LPush.Queue.Broker
 D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\bin\Debug\LPush.Queue.Broker.pdb
 D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\bin\Debug\AsyncIO.dll
 D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\bin\Debug\ZeroMQ.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\obj\Debug\LPush.Queue.Broker.csprojResolveAssemblyReference.cache
 D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\obj\Debug\LPush.Queue.Broker.exe
 D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Broker\obj\Debug\LPush.Queue.Broker.pdb

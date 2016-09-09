@@ -94,44 +94,24 @@ namespace Demo.Test
             //string url = "http://192.168.10.156:7921/api/QStore/SyncCompany";
             //string url = "http://192.168.10.156:7921/api/QStore/VisualCardExpend";
 
+            //string url = "https://support.yufu.cn/api/QStore/SyncCompany";
+            string url = "https://support.yufu.cn/api/QStore/VisualCardExpend";
+
+
             Dictionary<string, string> dic = new Dictionary<string, string>();
-            dic.Add("companyId", "121&companyName=nuomi&totalMoney=10000&bnBatchId=209517&batchDetail%5B0%5D%5BbatchId%5D=209517&batchDetail%5B0%5D%5BbatchMoney%5D=10000&batchDetail%5B0%5D%5BcardDetail%5D=%5B%7B%22tailData%22%3A%5B4%5D%2C%22startId%22%3A%22261889000001995%22%2C%22endId%22%3A%22261889000001995%22%2C%22price%22%3A5000%7D%2C%7B%22tailData%22%3A%5B2%5D%2C%22startId%22%3A%22261889000001996%22%2C%22endId%22%3A%22261889000001996%22%2C%22price%22%3A5000%7D%5D&timestamp=1470386789&logid=2788026615&mac=99d17540639a00a758345ea0ee32df6a");
-            
-            //dic.Add("companyId", "119&companyName=%E8%A3%95%E7%A6%8F%E9%9B%86%E5%9B%A2&mac=bfaf4d0fe32191091f480f786dd0a543");
-
-            //dic.Add("companyId", "50");
-            //dic.Add("companyName", "test");
-            //dic.Add("totalMoney", "123");
-            //dic.Add("bnBatchId", "123456&batchDetail%5B0%5D%5BbatchId%5D=11&batchDetail%5B0%5D%5BbatchMoney%5D=100&batchDetail%5B0%5D%5BcardDetail%5D=%5B%7B%22startId%22%3A100%2C%22endId%22%3A105%2C%22price%22%3A400%2C%22tailData%22%3A%5B1%2C3%2C4%2C4%2C4%5D%7D%5D");
-            //dic.Add("batchDetail", SimpleJson.SerializeObject(new List<dynamic>
-            //{
-            //    new
-            //    {
-            //        BatchId ="12345",
-            //        BatchMoney = 123,
-            //        CardDetail = new List<dynamic>()
-            //        {
-            //            new { StartId="1",EndId ="2",Price =123 }
-            //        },
-            //    },
-            //    //new
-            //    //{   BatchId="12349",
-            //    //    BatchMoney =123,
-            //    //    CardDetail=new List<dynamic>()
-            //    //    {
-            //    //        new { StartId="2",EndId ="3",Price =123}
-            //    //    },
-            //    //},
-            //}));
+            //dic.Add("companyId", "147&companyName=%E7%B3%AF%E7%B1%B3%E4%B8%8E%E8%A3%95%E7%A6%8F%E8%81%94%E8%B0%83%E6%95%B4%E4%BD%93%E6%B5%81%E7%A8%8B&totalMoney=200000&bnBatchId=264743&batchDetail%5B0%5D%5BbatchId%5D=264743&batchDetail%5B0%5D%5BbatchMoney%5D=200000&batchDetail%5B0%5D%5BcardDetail%5D=%5B%7B%22tailData%22%3A%5B8%5D%2C%22startId%22%3A%22261889000002257%22%2C%22endId%22%3A%22261889000002257%22%2C%22price%22%3A70000%7D%2C%7B%22tailData%22%3A%5B6%5D%2C%22startId%22%3A%22261889000002258%22%2C%22endId%22%3A%22261889000002258%22%2C%22price%22%3A130000%7D%5D&timestamp=1471522227&logid=0627541872&mac=f0ccef4d3c2a4811287bdc7ed5cebfdd");
+            //dic.Add("companyId", "100&companyName=浙江远力健药业有限责任公司&mac=bfaf4d0fe32191091f480f786dd0a543");
 
 
-            HttpWebResponse response = HttpWebUtils.Post(url, dic);
-
-            using (System.IO.StreamReader reader = new System.IO.StreamReader(response.GetResponseStream()))
+            for (int i = 0; i < 4; i++)
             {
-                Console.WriteLine(reader.ReadToEnd());
-            }
+                HttpWebResponse response = HttpWebUtils.Get(url, dic);
 
+                using (System.IO.StreamReader reader = new System.IO.StreamReader(response.GetResponseStream()))
+                {
+                    Console.WriteLine(reader.ReadToEnd());
+                }
+            }
             Console.ReadLine();
         }
 

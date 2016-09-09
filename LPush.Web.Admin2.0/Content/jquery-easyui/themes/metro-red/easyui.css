@@ -583,19 +583,27 @@
   -webkit-border-radius: 0 0 0 0;
   border-radius: 0 0 0 0;
 }
-.textbox-button-right {
+.textbox .textbox-button-right,
+.textbox .textbox-button-right:hover {
   right: 0;
-}
-.textbox-button-left {
-  left: 0;
-}
-.textbox-button-right,
-.textbox-button-right:hover {
   border-width: 0 0 0 1px;
 }
-.textbox-button-left,
-.textbox-button-left:hover {
+.textbox .textbox-button-left,
+.textbox .textbox-button-left:hover {
+  left: 0;
   border-width: 0 1px 0 0;
+}
+.textbox .textbox-button-top,
+.textbox .textbox-button-top:hover {
+  left: 0;
+  border-width: 0 0 1px 0;
+}
+.textbox .textbox-button-bottom,
+.textbox .textbox-button-bottom:hover {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  border-width: 1px 0 0 0;
 }
 .textbox-addon {
   position: absolute;
@@ -1312,6 +1320,15 @@
   border-width: 2px;
   border-style: solid;
   display: none;
+}
+.datagrid-empty {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
 }
 .datagrid-sort-icon {
   padding: 0;

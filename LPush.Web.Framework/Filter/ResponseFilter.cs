@@ -16,7 +16,7 @@ namespace LPush.Web.Framework.Filter
 {
     public class ResponseFilter: ActionFilterAttribute
     {
-        private static readonly ILog logger = LogManager.GetLogger(typeof(ExceptionFilter));
+        private static readonly ILog logger = LogManager.GetLogger(typeof(ResponseFilter));
 
         private AuthorizeOptions options;
         public ResponseFilter(AuthorizeOptions options):base()

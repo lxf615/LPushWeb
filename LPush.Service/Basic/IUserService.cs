@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using LPush.Model.Basic;
+using LPush.Model;
 using LPush.Core.Data;
 
 namespace LPush.Service.Basic

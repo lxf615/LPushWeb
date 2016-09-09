@@ -54,7 +54,6 @@
     <Compile Include="Caching\RedisCacheManager.cs" />
     <Compile Include="Configuration\LPushConfig.cs" />
     <Compile Include="Data\BaseDataProviderManager.cs" />
-    <Compile Include="Data\BaseEntity.cs" />
     <Compile Include="Caching\Extensions.cs" />
     <Compile Include="Caching\ICacheManager.cs" />
     <Compile Include="Caching\MemoryCacheManager.cs" />
@@ -70,7 +69,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

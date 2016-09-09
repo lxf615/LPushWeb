@@ -43,6 +43,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.1.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.0\lib\net451\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -130,56 +146,6 @@
     <Content Include="Scripts\jquery-easyui\easyloader.js" />
     <Content Include="Scripts\jquery-easyui\jquery.easyui.min.js" />
     <Content Include="Content\jquery-easyui\themes\color.css" />
-    <Content Include="Content\jquery-easyui\themes\default\accordion.css" />
-    <Content Include="Content\jquery-easyui\themes\default\calendar.css" />
-    <Content Include="Content\jquery-easyui\themes\default\combo.css" />
-    <Content Include="Content\jquery-easyui\themes\default\combobox.css" />
-    <Content Include="Content\jquery-easyui\themes\default\datagrid.css" />
-    <Content Include="Content\jquery-easyui\themes\default\datalist.css" />
-    <Content Include="Content\jquery-easyui\themes\default\datebox.css" />
-    <Content Include="Content\jquery-easyui\themes\default\dialog.css" />
-    <Content Include="Content\jquery-easyui\themes\default\easyui.css" />
-    <Content Include="Content\jquery-easyui\themes\default\filebox.css" />
-    <Content Include="Content\jquery-easyui\themes\default\images\accordion_arrows.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\blank.gif" />
-    <Content Include="Content\jquery-easyui\themes\default\images\calendar_arrows.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\combo_arrow.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\datagrid_icons.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\datebox_arrow.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\layout_arrows.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\linkbutton_bg.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\loading.gif" />
-    <Content Include="Content\jquery-easyui\themes\default\images\menu_arrows.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\messager_icons.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\pagination_icons.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\panel_tools.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\searchbox_button.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\slider_handle.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\spinner_arrows.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\tabs_icons.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\tree_icons.png" />
-    <Content Include="Content\jquery-easyui\themes\default\images\validatebox_warning.png" />
-    <Content Include="Content\jquery-easyui\themes\default\layout.css" />
-    <Content Include="Content\jquery-easyui\themes\default\linkbutton.css" />
-    <Content Include="Content\jquery-easyui\themes\default\menu.css" />
-    <Content Include="Content\jquery-easyui\themes\default\menubutton.css" />
-    <Content Include="Content\jquery-easyui\themes\default\messager.css" />
-    <Content Include="Content\jquery-easyui\themes\default\numberbox.css" />
-    <Content Include="Content\jquery-easyui\themes\default\pagination.css" />
-    <Content Include="Content\jquery-easyui\themes\default\panel.css" />
-    <Content Include="Content\jquery-easyui\themes\default\progressbar.css" />
-    <Content Include="Content\jquery-easyui\themes\default\propertygrid.css" />
-    <Content Include="Content\jquery-easyui\themes\default\searchbox.css" />
-    <Content Include="Content\jquery-easyui\themes\default\slider.css" />
-    <Content Include="Content\jquery-easyui\themes\default\spinner.css" />
-    <Content Include="Content\jquery-easyui\themes\default\splitbutton.css" />
-    <Content Include="Content\jquery-easyui\themes\default\switchbutton.css" />
-    <Content Include="Content\jquery-easyui\themes\default\tabs.css" />
-    <Content Include="Content\jquery-easyui\themes\default\textbox.css" />
-    <Content Include="Content\jquery-easyui\themes\default\tooltip.css" />
-    <Content Include="Content\jquery-easyui\themes\default\tree.css" />
-    <Content Include="Content\jquery-easyui\themes\default\validatebox.css" />
-    <Content Include="Content\jquery-easyui\themes\default\window.css" />
     <Content Include="Content\jquery-easyui\themes\icon.css" />
     <Content Include="Content\jquery-easyui\themes\icons\back.png" />
     <Content Include="Content\jquery-easyui\themes\icons\blank.gif" />
@@ -213,13 +179,20 @@
     <Content Include="Content\jquery-easyui\themes\icons\tip.png" />
     <Content Include="Content\jquery-easyui\themes\icons\undo.png" />
     <Content Include="Content\jquery-easyui\themes\mobile.css" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GlobalVariables.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -248,7 +221,24 @@
     <Folder Include="Content\jquery-easyui\themes\metro-green\" />
     <Folder Include="Content\jquery-easyui\themes\metro-orange\" />
     <Folder Include="Content\jquery-easyui\themes\metro-red\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LPush.Core\LPush.Core.csproj">
+      <Project>{b3fc511e-7d53-4543-b556-fb11d8dba69f}</Project>
+      <Name>LPush.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LPush.Model\LPush.Model.csproj">
+      <Project>{c0d730b4-3816-4629-9c58-7350de03758f}</Project>
+      <Name>LPush.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LPush.Service\LPush.Service.csproj">
+      <Project>{360ae916-5047-4ca8-80a4-6d0f7465ccb1}</Project>
+      <Name>LPush.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LPush.Web.Framework\LPush.Web.Framework.csproj">
+      <Project>{23cb6dec-7f0b-4c22-b8f5-e1588bf145c8}</Project>
+      <Name>LPush.Web.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

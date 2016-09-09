@@ -1,4 +1,0 @@
-D:\Project\MyProject\C#\LPushWeb\LPush.Data.SQLServer\bin\Release\LPush.Data.SQLServer.dll
-D:\Project\MyProject\C#\LPushWeb\LPush.Data.SQLServer\bin\Release\LPush.Data.SQLServer.pdb
-D:\Project\MyProject\C#\LPushWeb\LPush.Data.SQLServer\obj\Release\LPush.Data.SQLServer.dll
-D:\Project\MyProject\C#\LPushWeb\LPush.Data.SQLServer\obj\Release\LPush.Data.SQLServer.pdb

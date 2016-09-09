@@ -46,8 +46,6 @@ namespace LPush.Data
         /// <returns>Entity</returns>
         public virtual T GetById(object id)
         {
-            //see some suggested performance optimization (not tested)
-            //http://stackoverflow.com/questions/11686225/dbset-find-method-ridiculously-slow-compared-to-singleordefault-on-id/11688189#comment34876113_11688189
             return this.SlaveEntities.Find(id);
         }
 
@@ -246,17 +244,6 @@ namespace LPush.Data
                 return this.SlaveEntities.AsNoTracking();
             }
         }
-
-        ///// <summary>
-        ///// Gets a table with "no tracking" enabled (EF feature) Use it only when you load record(s) only for read-only operations
-        ///// </summary>
-        //public virtual IQueryable<T> TableNoTracking
-        //{
-        //    get
-        //    {
-        //        return this.SlaveEntities.AsNoTracking();
-        //    }
-        //}
 
         /// <summary>
         /// Master Entities

@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,17 +47,61 @@
     <Compile Include="Basic\Points.cs" />
     <Compile Include="Basic\User.cs" />
     <Compile Include="Basic\Login.cs" />
+    <Compile Include="DataPermission.cs">
+      <DependentUpon>LPushWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enterprise.cs">
+      <DependentUpon>LPushWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Feature.cs">
+      <DependentUpon>LPushWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <DependentUpon>LPushWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPermission.cs">
+      <DependentUpon>LPushWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LPushWeb.cs">
+      <DependentUpon>LPushWeb.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Permission\DataPermission.cs" />
     <Compile Include="Permission\Feature.cs" />
     <Compile Include="Permission\LoginPermission.cs" />
-    <Compile Include="Sample\Example.cs" />
+    <Compile Include="Points.cs">
+      <DependentUpon>LPushWeb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableTemplate.cs">
+      <DependentUpon>LPushWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>LPushWeb.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPush.Core\LPush.Core.csproj">
       <Project>{B3FC511E-7D53-4543-B556-FB11D8DBA69F}</Project>
       <Name>LPush.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="LPushWeb.edmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LPushWeb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LPushWeb.edmx</DependentUpon>
+      <LastGenOutput>LPushWeb.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

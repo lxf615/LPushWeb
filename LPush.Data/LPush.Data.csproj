@@ -58,15 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataProvider\EfDataProviderManager.cs" />
-    <Compile Include="DataProvider\MySqlServerDataProvider.cs" />
-    <Compile Include="DataProvider\SqlServerDataProvider.cs" />
-    <Compile Include="Initializers\CreateTablesIfNotExist.cs" />
-    <Compile Include="Mapping\Basic\UserMapping.cs" />
-    <Compile Include="Repository\EfRepository.cs" />
-    <Compile Include="Repository\IDbContext.cs" />
-    <Compile Include="Repository\EfObjectContext.cs" />
-    <Compile Include="Mapping\Sample\SampleMapping.cs" />
+    <Compile Include="Mapping\Basic\LoginMapping.cs" />
     <Compile Include="Mapping\LPushEntityTypeConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +78,11 @@
       <Project>{C0D730B4-3816-4629-9C58-7350DE03758F}</Project>
       <Name>LPush.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataProvider\" />
+    <Folder Include="Initializers\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,7 +4,6 @@ using Nancy.Security;
 
 
 using LPush.Core.Caching;
-using LPush.Model.Sample;
 
 using LPush.Web.Framework;
 using LPush.Web.Models;

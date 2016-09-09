@@ -4,11 +4,9 @@ using Nancy.Security;
 
 using LPush.Core.Caching;
 
-using LPush.Model.Sample;
+using LPush.Model;
 using LPush.Web.Framework;
 using LPush.Web.Admin.Models;
-using LPush.Model;
-using LPush.Service.Sample;
 
 namespace LPush.Web.Admin.Controller
 {
@@ -16,19 +14,13 @@ namespace LPush.Web.Admin.Controller
     {
         private ICacheManager cacheManager = null;
 
-        public HomeController(ICacheManager cacheManager, IExampleService exampleService) 
+        public HomeController(ICacheManager cacheManager) 
         {
             this.RequiresAuthentication();
 
             this.cacheManager = cacheManager;
             Get["/"] = _ => Index();
             Get["/Index"] = _ => Index();
-
-            Get["/Example/{Id}"] = _ =>
-            {
-                var example = exampleService.GetExampleById(_.Id);
-                return example;
-            };
         }
 
         private dynamic Index()

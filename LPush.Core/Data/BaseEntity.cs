@@ -42,6 +42,11 @@ namespace LPush.Core.Data
         /// </summary>
         public bool IsDeleted { get; set; }
 
+        /// <summary>
+        /// 时间戳
+        /// </summary>
+        public byte[] Timestamp { get; set; }
+
         public override bool Equals(object obj)
         {
             return Equals(obj as BaseEntity);

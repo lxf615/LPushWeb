@@ -8,7 +8,7 @@ using Nancy.Security;
 using LPush.WebApi.Infrastructure;
 using Nancy.ModelBinding;
 using LPush.Service.Basic;
-using LPush.Model.Basic;
+using LPush.Model;
 
 using LPush.Core.Data;
 using Generic;

@@ -4,6 +4,60 @@
         <name>Generic2.0</name>
     </assembly>
     <members>
+        <member name="T:Generic.ConvertUtils">
+            <summary>
+            通用数据转换工具
+            </summary>
+        </member>
+        <member name="M:Generic.ConvertUtils.ToString(System.Object)">
+            <summary>
+            转为字符串
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.ConvertUtils.ToDecimal(System.Object)">
+            <summary>
+            转为小数
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.ConvertUtils.ToDecimal(System.Object,System.Decimal)">
+            <summary>
+            转为小数
+            </summary>
+            <param name="o"></param>
+            <param name="defaults">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.ConvertUtils.ToInt(System.Object)">
+            <summary>
+            转为整数
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.ConvertUtils.ToInt(System.Object,System.Int32)">
+            <summary>
+            数据为整数
+            </summary>
+            <param name="o"></param>
+            <param name="defaultInt">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="T:Generic.DateTimeExtension">
+            <summary>
+            日期类型扩展
+            </summary>
+        </member>
+        <member name="M:Generic.DateTimeExtension.ToTimestamp(System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:Generic.EMail.#ctor(System.String,System.String,System.String,System.String,System.String)" -->
         <!-- Badly formed XML comment ignored for member "M:Generic.EMail.Attachments(System.String)" -->
         <!-- Badly formed XML comment ignored for member "M:Generic.EMail.SendAsync(System.Net.Mail.SendCompletedEventHandler)" -->
@@ -74,6 +128,50 @@
             检测端口是否被占用
             </summary>
             <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Generic.HttpWebUtils">
+            <summary>
+            有关HTTP请求的辅助类
+            </summary>
+        </member>
+        <member name="M:Generic.HttpWebUtils.Get(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            创建GET方式的HTTP请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="parameters">请求的参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.HttpWebUtils.Get(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{System.Int32},System.String,System.Net.CookieCollection)">
+            <summary>
+            创建POST方式的HTTP请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="parameters">随同请求POST的参数名称及参数值字典</param>
+            <param name="timeout">请求的超时时间</param>
+            <param name="userAgent">请求的客户端浏览器信息，可以为空</param>
+            <param name="cookies">随同HTTP请求发送的Cookie信息，如果不需要身份验证可以为空</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.HttpWebUtils.Post(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            创建POST方式的HTTP请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="parameters">随同请求POST的参数名称及参数值字典</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.HttpWebUtils.Post(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{System.Int32},System.String,System.Text.Encoding,System.Net.CookieCollection)">
+            <summary>
+            创建POST方式的HTTP请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="parameters">随同请求POST的参数名称及参数值字典</param>
+            <param name="timeout">请求的超时时间</param>
+            <param name="userAgent">请求的客户端浏览器信息，可以为空</param>
+            <param name="requestEncoding">发送HTTP请求时所用的编码</param>
+            <param name="cookies">随同HTTP请求发送的Cookie信息，如果不需要身份验证可以为空</param>
             <returns></returns>
         </member>
         <member name="M:Generic.StringExtension.ToDateTime(System.String,System.String)">
@@ -262,7 +360,7 @@
             <param name="msg">日志内容</param>
             <param name="directory">日志记录路径</param>
         </member>
-        <member name="M:Generic.ReflectorUtis.GetEnumDescription(System.Enum)">
+        <member name="M:Generic.ReflectorUtils.GetEnumDescription(System.Enum)">
             <summary>
             读取枚举的Description属性
             </summary>

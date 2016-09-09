@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 
 using LPush.Core.Data;
-using LPush.Model.Basic;
+using LPush.Model;
 using LPush.WebApi.Models;
 namespace LPush.WebApi.Controllers
 {

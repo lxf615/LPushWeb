@@ -4,35 +4,63 @@
         <name>Generic2.0</name>
     </assembly>
     <members>
-        <member name="M:Generic.ConvertUtils.ToBase64String(System.String)">
+        <member name="T:Generic.ConvertUtils">
             <summary>
-            Base64编码
+            通用数据转换工具
             </summary>
-            <param name="data"></param>
+        </member>
+        <member name="M:Generic.ConvertUtils.ToString(System.Object)">
+            <summary>
+            转为字符串
+            </summary>
+            <param name="o"></param>
             <returns></returns>
         </member>
-        <member name="M:Generic.ConvertUtils.FromBase64String(System.String)">
+        <member name="M:Generic.ConvertUtils.ToDecimal(System.Object)">
             <summary>
-            Base64解码
+            转为小数
             </summary>
-            <param name="data"></param>
+            <param name="o"></param>
             <returns></returns>
         </member>
-        <member name="M:Generic.ConvertUtils.FromBase64String(System.Text.Encoding,System.String)">
+        <member name="M:Generic.ConvertUtils.ToDecimal(System.Object,System.Decimal)">
             <summary>
-            Base64解码
+            转为小数
             </summary>
-            <param name="encoding"></param>
-            <param name="data"></param>
+            <param name="o"></param>
+            <param name="defaults">默认值</param>
             <returns></returns>
         </member>
-        <member name="M:Generic.EMail.#ctor(System.String,System.String,System.String,System.String,System.String)">
-            <param name="Password">发件人密码</param>   
+        <member name="M:Generic.ConvertUtils.ToInt(System.Object)">
+            <summary>
+            转为整数
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
         </member>
+        <member name="M:Generic.ConvertUtils.ToInt(System.Object,System.Int32)">
+            <summary>
+            数据为整数
+            </summary>
+            <param name="o"></param>
+            <param name="defaultInt">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="T:Generic.DateTimeExtension">
+            <summary>
+            日期类型扩展
+            </summary>
+        </member>
+        <member name="M:Generic.DateTimeExtension.ToTimestamp(System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Generic.EMail.#ctor(System.String,System.String,System.String,System.String,System.String)" -->
         <!-- Badly formed XML comment ignored for member "M:Generic.EMail.Attachments(System.String)" -->
-        <member name="M:Generic.EMail.SendAsync(System.Net.Mail.SendCompletedEventHandler)">
-            <param name="CompletedMethod"></param>   
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:Generic.EMail.SendAsync(System.Net.Mail.SendCompletedEventHandler)" -->
         <member name="M:Generic.EMail.Send">
             <summary>   
             发送邮件,默认端口25
@@ -65,12 +93,11 @@
             <returns></returns>
         </member>
         <member name="M:Generic.EncryptUtils.GetMD5String(System.String,System.Text.Encoding)">
-            取得字符串的md5加密串 Mike Cheers 20120103添加
             <summary>
             取得字符串的md5加密串
             </summary>
             <param name="str">原字符串</param>
-            <param name="encodingString">编码集,如GB2312等</param>
+            <param name="encoding">编码集,如GB2312等</param>
             <returns></returns>
         </member>
         <member name="M:Generic.EncryptUtils.GetMD5String(System.String,System.String)">
@@ -101,6 +128,50 @@
             检测端口是否被占用
             </summary>
             <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Generic.HttpWebUtils">
+            <summary>
+            有关HTTP请求的辅助类
+            </summary>
+        </member>
+        <member name="M:Generic.HttpWebUtils.Get(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            创建GET方式的HTTP请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="parameters">请求的参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.HttpWebUtils.Get(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{System.Int32},System.String,System.Net.CookieCollection)">
+            <summary>
+            创建POST方式的HTTP请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="parameters">随同请求POST的参数名称及参数值字典</param>
+            <param name="timeout">请求的超时时间</param>
+            <param name="userAgent">请求的客户端浏览器信息，可以为空</param>
+            <param name="cookies">随同HTTP请求发送的Cookie信息，如果不需要身份验证可以为空</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.HttpWebUtils.Post(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            创建POST方式的HTTP请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="parameters">随同请求POST的参数名称及参数值字典</param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.HttpWebUtils.Post(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{System.Int32},System.String,System.Text.Encoding,System.Net.CookieCollection)">
+            <summary>
+            创建POST方式的HTTP请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="parameters">随同请求POST的参数名称及参数值字典</param>
+            <param name="timeout">请求的超时时间</param>
+            <param name="userAgent">请求的客户端浏览器信息，可以为空</param>
+            <param name="requestEncoding">发送HTTP请求时所用的编码</param>
+            <param name="cookies">随同HTTP请求发送的Cookie信息，如果不需要身份验证可以为空</param>
             <returns></returns>
         </member>
         <member name="M:Generic.StringExtension.ToDateTime(System.String,System.String)">
@@ -138,6 +209,28 @@
             <summary>
             获取MD5串,使用UTF8编码
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.StringExtension.ToBase64(System.String)">
+            <summary>
+            Base64编码,UTF8编码
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.StringExtension.FromBase64(System.String)">
+            <summary>
+            Base64解码,UTF8编码
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Generic.StringExtension.FromBase64(System.String,System.Text.Encoding)">
+            <summary>
+            Base64解码
+            </summary>
+            <param name="encoding"></param>
+            <param name="data"></param>
             <returns></returns>
         </member>
         <member name="M:Generic.FileUtils.CreateDirectory(System.String)">
@@ -267,7 +360,7 @@
             <param name="msg">日志内容</param>
             <param name="directory">日志记录路径</param>
         </member>
-        <member name="M:Generic.ReflectorUtis.GetEnumDescription(System.Enum)">
+        <member name="M:Generic.ReflectorUtils.GetEnumDescription(System.Enum)">
             <summary>
             读取枚举的Description属性
             </summary>

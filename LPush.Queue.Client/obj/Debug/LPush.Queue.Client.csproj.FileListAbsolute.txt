@@ -4,6 +4,8 @@ D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Client\bin\Debug\LPush.Queue.Client
 D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Client\bin\Debug\AsyncIO.dll
 D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Client\bin\Debug\Generic2.0.dll
 D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Client\bin\Debug\ZeroMQ.dll
+D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Client\bin\Debug\Generic2.0.pdb
 D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Client\bin\Debug\Generic2.0.xml
+D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Client\obj\Debug\LPush.Queue.Client.csprojResolveAssemblyReference.cache
 D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Client\obj\Debug\LPush.Queue.Client.exe
 D:\Project\MyProject\C#\LPushWeb\LPush.Queue.Client\obj\Debug\LPush.Queue.Client.pdb

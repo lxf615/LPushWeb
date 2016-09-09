@@ -2,12 +2,12 @@
 
 using LPush.Core.Data;
 
-namespace LPush.Model.Basic
+namespace LPush.Model
 {
     /// <summary>
     /// 用户信息表
     /// </summary>
-    public class User : BaseEntity
+    public partial class User 
     {
         public User() : base()
         {
